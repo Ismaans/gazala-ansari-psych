@@ -264,17 +264,16 @@ li::marker {
 }
 
 .nav-dropdown__toggle::after {
-  content: "";
-  width: 0.4rem;
-  height: 0.4rem;
-  border-right: 1.5px solid currentColor;
-  border-bottom: 1.5px solid currentColor;
-  transform: rotate(45deg) translateY(-2px);
+  content: "\25BE";
+  display: inline-block;
+  margin-left: 0.4rem;
+  font-size: 0.7em;
+  line-height: 1;
   transition: transform var(--transition);
 }
 
 .nav-dropdown.is-open .nav-dropdown__toggle::after {
-  transform: rotate(-135deg) translateY(1px);
+  transform: rotate(180deg);
 }
 
 .main-nav a:hover,
@@ -1381,6 +1380,17 @@ li::marker {
     width: 100%;
     text-align: left;
     font-size: 0.9375rem;
+  }
+
+  .nav-dropdown__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-dropdown__toggle::after {
+    margin-left: auto;
+    font-size: 0.85em;
   }
 
   .nav-dropdown__menu {
