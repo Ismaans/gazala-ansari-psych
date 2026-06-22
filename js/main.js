@@ -142,14 +142,52 @@
 
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
+    const PRACTICE_EMAIL = "drgansari@ansarillc.hush.com";
+
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
+
+      const data = new FormData(contactForm);
+      const name = (data.get("name") || "").toString().trim();
+      const email = (data.get("email") || "").toString().trim();
+      const phone = (data.get("phone") || "").toString().trim();
+      const reason = (data.get("reason") || "").toString().trim();
+      const method = (data.get("contact-method") || "").toString().trim();
+      const message = (data.get("message") || "").toString().trim();
+
+      const subject = name
+        ? "Website contact from " + name
+        : "Website contact";
+
+      const bodyLines = [
+        "Name: " + name,
+        "Email: " + email,
+      ];
+      if (phone) bodyLines.push("Phone: " + phone);
+      if (reason) bodyLines.push("Reason for inquiry: " + reason);
+      if (method) bodyLines.push("Preferred contact method: " + method);
+      bodyLines.push("", "Message:", message);
+
+      const mailtoUrl =
+        "mailto:" +
+        PRACTICE_EMAIL +
+        "?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(bodyLines.join("\n"));
+
+      window.location.href = mailtoUrl;
+
       const status = document.getElementById("form-status");
       if (status) {
-        status.textContent =
-          "Thank you for your message. My office will respond as soon as possible.";
+        status.innerHTML =
+          'Your email client should open with the message ready to send. ' +
+          'If it does not, please email <a href="mailto:' +
+          PRACTICE_EMAIL +
+          '">' +
+          PRACTICE_EMAIL +
+          "</a> directly.";
         status.hidden = false;
-        contactForm.reset();
       }
     });
   }
