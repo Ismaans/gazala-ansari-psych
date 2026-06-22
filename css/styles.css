@@ -264,16 +264,21 @@ li::marker {
 }
 
 .nav-dropdown__toggle::after {
-  content: "\25BE";
-  display: inline-block;
-  margin-left: 0.4rem;
-  font-size: 0.7em;
-  line-height: 1;
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
   transition: transform var(--transition);
 }
 
-.nav-dropdown.is-open .nav-dropdown__toggle::after {
-  transform: rotate(180deg);
+/* Desktop: rotate chevron when hovering or keyboard-focused */
+@media (hover: hover) and (min-width: 1025px) {
+  .nav-dropdown:hover .nav-dropdown__toggle::after,
+  .nav-dropdown:focus-within .nav-dropdown__toggle::after {
+    transform: rotate(-135deg) translateY(1px);
+  }
 }
 
 .main-nav a:hover,
@@ -296,18 +301,37 @@ li::marker {
   position: relative;
 }
 
+/* Invisible hover bridge between the toggle and menu so cursor can travel
+   into the dropdown without losing :hover. Desktop only. */
+@media (hover: hover) and (min-width: 1025px) {
+  .nav-dropdown::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: -0.5rem;
+    right: -0.5rem;
+    height: 0.85rem;
+    pointer-events: none;
+  }
+
+  .nav-dropdown:hover::after,
+  .nav-dropdown:focus-within::after {
+    pointer-events: auto;
+  }
+}
+
 .nav-dropdown__menu {
   position: absolute;
-  top: calc(100% + 0.75rem);
+  top: calc(100% + 0.65rem);
   left: 50%;
   transform: translateX(-50%);
-  min-width: 15rem;
+  min-width: 17rem;
   background: var(--color-surface);
   border-radius: var(--radius);
   box-shadow: var(--shadow-md);
   list-style: none;
   margin: 0;
-  padding: 0.5rem 0;
+  padding: 0.65rem 0;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -324,8 +348,8 @@ li::marker {
 
 .nav-dropdown__menu a {
   display: block;
-  padding: 0.625rem 1.25rem;
-  font-size: 0.875rem;
+  padding: 0.75rem 1.4rem;
+  font-size: 0.9375rem;
   font-weight: 400;
   color: var(--color-text);
   text-decoration: none;
@@ -1027,7 +1051,7 @@ li::marker {
 /* Team grid + profile pages */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-md);
   margin-top: var(--space-lg);
 }
@@ -1035,7 +1059,7 @@ li::marker {
 .team-card {
   background: var(--color-surface);
   border-radius: var(--radius-lg);
-  padding: var(--space-lg);
+  padding: var(--space-md);
   box-shadow: var(--shadow-card);
   text-decoration: none;
   color: inherit;
@@ -1055,8 +1079,8 @@ li::marker {
 }
 
 .team-card__photo {
-  width: 9rem;
-  height: 9rem;
+  width: 8rem;
+  height: 8rem;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
@@ -1066,8 +1090,9 @@ li::marker {
 
 .team-card__name {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 600;
+  line-height: 1.3;
   margin: 0 0 0.25rem;
   color: var(--color-text);
 }
@@ -1183,7 +1208,7 @@ li::marker {
   line-height: 1.75;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1100px) {
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1382,21 +1407,31 @@ li::marker {
     font-size: 0.9375rem;
   }
 
+  /* Match the desktop "Services ∨" pattern: chevron sits next to the
+     label using the same CSS chevron and inherited gap, never alone at
+     the right edge where it can read like a text-input caret. */
   .nav-dropdown__toggle {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: space-between;
+    width: auto;
+    gap: 0.4rem;
   }
 
-  .nav-dropdown__toggle::after {
-    margin-left: auto;
-    font-size: 0.85em;
+  .nav-dropdown.is-open .nav-dropdown__toggle::after {
+    transform: rotate(-135deg) translateY(1px);
+  }
+
+  /* Restore original mobile dropdown item sizing */
+  .nav-dropdown__menu a {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
   }
 
   .nav-dropdown__menu {
     position: static;
     transform: none;
     box-shadow: none;
+    min-width: 0;
     padding: 0 0 0 1rem;
     opacity: 1;
     visibility: visible;

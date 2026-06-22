@@ -21,6 +21,12 @@
     if (!toggle) return;
 
     toggle.addEventListener("click", function (e) {
+      // Desktop: let the link navigate to services.html (hover handles the menu).
+      if (!window.matchMedia("(max-width: 1024px)").matches) {
+        return;
+      }
+      // Mobile: prevent navigation and toggle the dropdown instead.
+      e.preventDefault();
       e.stopPropagation();
       const isOpen = dropdown.classList.toggle("is-open");
       toggle.setAttribute("aria-expanded", isOpen);
