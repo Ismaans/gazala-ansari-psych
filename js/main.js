@@ -16,30 +16,9 @@
     });
   }
 
-  document.querySelectorAll(".nav-dropdown").forEach(function (dropdown) {
-    const toggle = dropdown.querySelector(".nav-dropdown__toggle");
-    if (!toggle) return;
-
-    toggle.addEventListener("click", function (e) {
-      // Desktop: let the link navigate to services.html (hover handles the menu).
-      if (!window.matchMedia("(max-width: 1024px)").matches) {
-        return;
-      }
-      // Mobile: prevent navigation and toggle the dropdown instead.
-      e.preventDefault();
-      e.stopPropagation();
-      const isOpen = dropdown.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", isOpen);
-    });
-  });
-
-  document.addEventListener("click", function () {
-    document.querySelectorAll(".nav-dropdown.is-open").forEach(function (dropdown) {
-      dropdown.classList.remove("is-open");
-      const toggle = dropdown.querySelector(".nav-dropdown__toggle");
-      if (toggle) toggle.setAttribute("aria-expanded", "false");
-    });
-  });
+  // The "Services" toggle is a real link: it always navigates to services.html
+  // on click (both mobile and desktop). Desktop reveals the submenu on hover;
+  // mobile shows "Services" as a plain link with no submenu.
 
   document.querySelectorAll(".faq-item").forEach(function (item) {
     const summary = item.querySelector("summary");

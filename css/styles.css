@@ -265,19 +265,20 @@ li::marker {
 
 .nav-dropdown__toggle::after {
   content: "";
-  width: 0.4rem;
-  height: 0.4rem;
-  border-right: 1.5px solid currentColor;
-  border-bottom: 1.5px solid currentColor;
-  transform: rotate(45deg) translateY(-2px);
+  width: 0.7rem;
+  height: 0.7rem;
+  flex-shrink: 0;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat center / contain;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat center / contain;
   transition: transform var(--transition);
 }
 
-/* Desktop: rotate chevron when hovering or keyboard-focused */
+/* Desktop: flip chevron when hovering or keyboard-focused */
 @media (hover: hover) and (min-width: 1025px) {
   .nav-dropdown:hover .nav-dropdown__toggle::after,
   .nav-dropdown:focus-within .nav-dropdown__toggle::after {
-    transform: rotate(-135deg) translateY(1px);
+    transform: rotate(180deg);
   }
 }
 
@@ -576,9 +577,13 @@ li::marker {
 
 .about-intro__grid {
   display: grid;
-  grid-template-columns: minmax(12rem, 16rem) 1fr;
+  grid-template-columns: minmax(14rem, 19rem) 1fr;
   gap: var(--space-xl);
   align-items: start;
+}
+
+.about-intro__photo img {
+  aspect-ratio: 3 / 4;
 }
 
 .about-intro__content h1 {
@@ -592,11 +597,13 @@ li::marker {
   margin: 0 0 var(--space-md);
 }
 
+/* Credential info cards — styled to match the clean Credentials table:
+   white surface, muted-gray labels, thin light-gray row dividers. */
 .credentials-intro-card {
   margin-top: 0;
-  background: var(--color-accent-light);
+  background: var(--color-surface);
   border: none;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-card);
 }
 
 .credentials-intro-card ul {
@@ -606,20 +613,22 @@ li::marker {
 }
 
 .credentials-intro-card li {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(95, 138, 122, 0.15);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-border);
   margin: 0;
-  font-size: 0.9375rem;
+  font-size: 1rem;
+  color: var(--color-text);
 }
 
 .credentials-intro-card li:last-child {
   border-bottom: none;
-  padding-bottom: 0;
 }
 
 .credentials-intro-card strong {
-  color: var(--color-accent-dark);
+  color: var(--color-text-muted);
   font-weight: 500;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
 }
 
 /* Trust badges */
@@ -743,35 +752,46 @@ li::marker {
   margin-bottom: 0;
 }
 
-/* Credentials table */
+/* Credentials table — one unified responsive table at every screen size.
+   Padding, font size, and label width adjust naturally between breakpoints. */
 .credentials-table {
   width: 100%;
+  margin: 0;
   border-collapse: collapse;
-  background: var(--color-surface);
-  border-radius: var(--radius-lg);
+  background: #fdfcfb;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: var(--shadow-card);
 }
 
 .credentials-table th,
 .credentials-table td {
-  padding: var(--space-sm) var(--space-md);
+  padding: 1.5rem 2rem;
   text-align: left;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.credentials-table th {
-  width: 35%;
-  font-weight: 500;
-  color: var(--color-text-muted);
-  background: var(--color-bg-alt);
-  font-family: var(--font-sans);
-  font-size: 0.9375rem;
+  vertical-align: baseline;
+  border-bottom: 1px solid #e5e0da;
 }
 
 .credentials-table tr:last-child th,
 .credentials-table tr:last-child td {
   border-bottom: none;
+}
+
+/* Label column: shrinks to fit the widest label (e.g. "NPI (Individual)")
+   and never wraps, so all labels line up; value column takes the rest. */
+.credentials-table th {
+  width: 1%;
+  white-space: nowrap;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  color: #8a8580;
+  background: none;
+}
+
+.credentials-table td {
+  font-size: 1.125rem;
+  color: var(--color-text);
 }
 
 /* Tag list */
@@ -1407,51 +1427,14 @@ li::marker {
     font-size: 0.9375rem;
   }
 
-  /* Match the desktop "Services ∨" pattern: chevron sits next to the
-     label using the same CSS chevron and inherited gap, never alone at
-     the right edge where it can read like a text-input caret. */
-  .nav-dropdown__toggle {
-    display: inline-flex;
-    align-items: center;
-    width: auto;
-    gap: 0.4rem;
-  }
-
-  .nav-dropdown.is-open .nav-dropdown__toggle::after {
-    transform: rotate(-135deg) translateY(1px);
-  }
-
-  /* Restore original mobile dropdown item sizing */
-  .nav-dropdown__menu a {
-    padding: 0.625rem 1.25rem;
-    font-size: 0.875rem;
-  }
-
+  /* On mobile, "Services" is a plain link to the Services page — no
+     submenu and no chevron. */
   .nav-dropdown__menu {
-    position: static;
-    transform: none;
-    box-shadow: none;
-    min-width: 0;
-    padding: 0 0 0 1rem;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    display: none;
-    background: var(--color-bg-alt);
-    border-radius: var(--radius);
-    margin-bottom: var(--space-sm);
-  }
-
-  .nav-dropdown.is-open .nav-dropdown__menu {
-    display: block;
-  }
-
-  .nav-dropdown:hover .nav-dropdown__menu {
     display: none;
   }
 
-  .nav-dropdown.is-open:hover .nav-dropdown__menu {
-    display: block;
+  .nav-dropdown__toggle::after {
+    display: none;
   }
 
   .btn--nav-cta {
@@ -1514,20 +1497,14 @@ li::marker {
     margin: 0 auto;
   }
 
+  /* Mobile: same side-by-side rows, tighter padding and smaller value text */
   .credentials-table th,
   .credentials-table td {
-    display: block;
-    width: 100%;
-  }
-
-  .credentials-table th {
-    padding-bottom: 0.25rem;
-    border-bottom: none;
+    padding: 0.8rem 1rem;
   }
 
   .credentials-table td {
-    padding-top: 0;
-    padding-bottom: var(--space-sm);
+    font-size: 0.9375rem;
   }
 }
 
