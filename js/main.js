@@ -8,8 +8,25 @@
       navToggle.setAttribute("aria-expanded", isOpen);
     });
 
+    // Collapsible dropdowns on mobile (Services + Resources)
+    var mobileDropdownToggles = [];
+    mainNav.querySelectorAll(".nav-dropdown .nav-dropdown__toggle").forEach(function (toggle) {
+      var dropdown = toggle.closest(".nav-dropdown");
+      mobileDropdownToggles.push(toggle);
+
+      toggle.addEventListener("click", function (e) {
+        // Only intercept on mobile (hamburger button visible)
+        if (window.getComputedStyle(navToggle).display === "none") return;
+        e.preventDefault();
+        var open = dropdown.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", open);
+      });
+    });
+
+    // Close whole nav on regular link click, but not on dropdown toggles
     mainNav.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
+        if (mobileDropdownToggles.indexOf(link) !== -1) return;
         mainNav.classList.remove("is-open");
         navToggle.setAttribute("aria-expanded", "false");
       });

@@ -1375,10 +1375,125 @@ li::marker {
   border: 0;
 }
 
-/* Responsive */
+/* Plain-language term grid (Services: "What These Mean") */
+.term-grid {
+  margin: var(--space-md) 0 0;
+}
+
+.term-grid__row {
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.term-grid__row:last-child {
+  border-bottom: none;
+}
+
+.term-grid dt {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.term-grid dd {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+/* Comparison / data table (Resources pages) */
+.data-table-wrap {
+  overflow-x: auto;
+  margin: var(--space-md) 0 0;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 34rem;
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.data-table th,
+.data-table td {
+  text-align: left;
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9375rem;
+}
+
+.data-table thead th {
+  background: var(--color-accent-light);
+  color: var(--color-accent-dark);
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Sage-green brochure callout (Home) */
+.brochure-callout {
+  background: var(--color-accent);
+  color: #ffffff;
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.brochure-callout__inner {
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+.brochure-callout h2 {
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.brochure-callout__sub {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  margin-bottom: var(--space-md);
+  opacity: 0.95;
+}
+
+.brochure-callout p {
+  color: #ffffff;
+}
+
+.brochure-callout__contact {
+  margin: var(--space-md) 0;
+  line-height: 2;
+}
+
+.brochure-callout__contact a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.brochure-callout__insurance {
+  font-size: 0.9375rem;
+  opacity: 0.95;
+  margin-top: var(--space-md);
+}
+
+/* Sage-green brochure callout (Home) */
 @media (max-width: 992px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .term-grid__row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
   }
 }
 
@@ -1427,14 +1542,45 @@ li::marker {
     font-size: 0.9375rem;
   }
 
-  /* On mobile, "Services" is a plain link to the Services page — no
-     submenu and no chevron. */
+  /* All dropdown menus hidden on mobile by default */
   .nav-dropdown__menu {
     display: none;
   }
 
+  /* Both Services and Resources are collapsible dropdowns on mobile */
+  .nav-dropdown.is-open .nav-dropdown__menu {
+    display: block;
+    position: static;
+    transform: none;
+    background: none;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    min-width: 0;
+    padding: 0 0 var(--space-sm) var(--space-md);
+  }
+
+  .nav-dropdown.is-open .nav-dropdown__menu a {
+    display: block;
+    padding: var(--space-xs) 0;
+    font-size: 0.9375rem;
+  }
+
+  /* Show chevron on both Services and Resources toggles */
+  .nav-dropdown__toggle {
+    display: flex;
+    align-items: center;
+  }
+
   .nav-dropdown__toggle::after {
-    display: none;
+    display: inline-block;
+    margin-left: auto;
+    transition: transform var(--transition);
+  }
+
+  .nav-dropdown.is-open .nav-dropdown__toggle::after {
+    transform: rotate(180deg);
   }
 
   .btn--nav-cta {
