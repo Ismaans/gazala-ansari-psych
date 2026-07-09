@@ -1517,21 +1517,35 @@ li::marker {
   }
 
   .main-nav {
-    display: none;
+    display: flex;          /* keep in flow so height is measurable */
+    flex-direction: column;
+    align-items: stretch;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
     background: var(--color-surface);
     border-bottom: 1px solid var(--color-border);
-    padding: var(--space-md);
     box-shadow: var(--shadow-md);
-    flex-direction: column;
-    align-items: stretch;
+    overflow: hidden;
+    /* Collapsed state */
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    padding: 0 var(--space-md);
+    /* Closing: faster ease-in */
+    transition: max-height 200ms ease-in, opacity 200ms ease-in,
+                padding 200ms ease-in;
   }
 
   .main-nav.is-open {
-    display: flex;
+    max-height: 60rem;      /* tall enough for all nav items + open submenus */
+    opacity: 1;
+    pointer-events: auto;
+    padding: var(--space-md);
+    /* Opening: slightly slower ease-out */
+    transition: max-height 250ms ease-out, opacity 250ms ease-out,
+                padding 250ms ease-out;
   }
 
   .main-nav > ul {
@@ -1555,26 +1569,37 @@ li::marker {
     font-size: 0.9375rem;
   }
 
-  /* All dropdown menus hidden on mobile by default */
+  /* All dropdown menus hidden on mobile by default — use max-height so
+     the open/close can be animated with a CSS transition. */
   .nav-dropdown__menu {
-    display: none;
-  }
-
-  /* Both Services and Resources are collapsible dropdowns on mobile */
-  .nav-dropdown.is-open .nav-dropdown__menu {
-    display: block;
+    display: block;        /* keep in flow so height is measurable */
     position: static;
     transform: none;
     background: none;
     box-shadow: none;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
     min-width: 0;
-    padding: 0 0 var(--space-sm) var(--space-md);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    padding: 0 0 0 var(--space-md);
+    /* Closing: faster ease-in */
+    transition: max-height 200ms ease-in, opacity 200ms ease-in,
+                padding 200ms ease-in;
   }
 
-  .nav-dropdown.is-open .nav-dropdown__menu a {
+  /* Open state — slide down */
+  .nav-dropdown.is-open .nav-dropdown__menu {
+    max-height: 20rem;     /* generous cap; actual content is much shorter */
+    opacity: 1;
+    pointer-events: auto;
+    padding: 0 0 var(--space-sm) var(--space-md);
+    /* Opening: slightly slower ease-out */
+    transition: max-height 250ms ease-out, opacity 250ms ease-out,
+                padding 250ms ease-out;
+  }
+
+  .nav-dropdown__menu a {
     display: block;
     padding: var(--space-xs) 0;
     font-size: 0.9375rem;
@@ -1589,7 +1614,7 @@ li::marker {
   .nav-dropdown__toggle::after {
     display: inline-block;
     margin-left: auto;
-    transition: transform var(--transition);
+    transition: transform 200ms ease-in-out;
   }
 
   .nav-dropdown.is-open .nav-dropdown__toggle::after {
