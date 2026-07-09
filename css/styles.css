@@ -186,20 +186,33 @@ li::marker {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  text-decoration: none;
+  color: var(--color-text);
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.logo__img {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logo__text {
   font-family: var(--font-serif);
   font-size: 1.0625rem;
   font-weight: 500;
-  color: var(--color-text);
-  text-decoration: none;
   line-height: 1.3;
-  flex: 0 0 auto;
-  max-width: 18rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.logo span {
+.logo__text span {
   display: block;
   font-family: var(--font-sans);
   font-size: 0.6875rem;
@@ -1593,6 +1606,17 @@ li::marker {
 
   .nav-bar__inner {
     position: relative;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo__img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .logo__text {
+    font-size: 0.9375rem;
   }
 }
 
