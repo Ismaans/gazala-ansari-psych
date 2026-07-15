@@ -3,9 +3,46 @@
   const mainNav = document.querySelector(".main-nav");
 
   if (navToggle && mainNav) {
+    var mobileScrollLockQuery = window.matchMedia("(max-width: 768px)");
+    var siteHeader = document.querySelector(".site-header");
+
+    function isMobileScrollLockViewport() {
+      return mobileScrollLockQuery.matches;
+    }
+
+    function isHamburgerVisible() {
+      return window.getComputedStyle(navToggle).display !== "none";
+    }
+
+    function setBodyScrollLocked(locked) {
+      if (locked && isMobileScrollLockViewport()) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
+    }
+
+    function setNavOpen(open) {
+      mainNav.classList.toggle("is-open", open);
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      setBodyScrollLocked(open);
+
+      // When closing the whole menu, also collapse nested dropdowns
+      if (!open) {
+        mainNav.querySelectorAll(".nav-dropdown.is-open").forEach(function (dropdown) {
+          dropdown.classList.remove("is-open");
+          var toggle = dropdown.querySelector(".nav-dropdown__toggle");
+          if (toggle) toggle.setAttribute("aria-expanded", "false");
+        });
+      }
+    }
+
+    function closeNav() {
+      setNavOpen(false);
+    }
+
     navToggle.addEventListener("click", function () {
-      const isOpen = mainNav.classList.toggle("is-open");
-      navToggle.setAttribute("aria-expanded", isOpen);
+      setNavOpen(!mainNav.classList.contains("is-open"));
     });
 
     // Collapsible dropdowns on mobile (Services + Resources)
@@ -15,8 +52,8 @@
       mobileDropdownToggles.push(toggle);
 
       toggle.addEventListener("click", function (e) {
-        // Only intercept on mobile (hamburger button visible)
-        if (window.getComputedStyle(navToggle).display === "none") return;
+        // Only intercept when hamburger is visible
+        if (!isHamburgerVisible()) return;
         e.preventDefault();
         var open = dropdown.classList.toggle("is-open");
         toggle.setAttribute("aria-expanded", open);
@@ -27,10 +64,40 @@
     mainNav.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
         if (mobileDropdownToggles.indexOf(link) !== -1) return;
-        mainNav.classList.remove("is-open");
-        navToggle.setAttribute("aria-expanded", "false");
+        closeNav();
       });
     });
+
+    // Tap outside the header/menu closes it and unlocks scroll
+    document.addEventListener("click", function (e) {
+      if (!mainNav.classList.contains("is-open")) return;
+      if (!isHamburgerVisible()) return;
+      if (siteHeader && siteHeader.contains(e.target)) return;
+      closeNav();
+    });
+
+    // Browser back / history navigation should never leave body locked
+    window.addEventListener("popstate", closeNav);
+
+    // Leaving the mobile lock viewport (or leaving hamburger mode) must unlock
+    function unlockIfNeeded() {
+      if (!isMobileScrollLockViewport() || !isHamburgerVisible()) {
+        document.body.style.overflow = "";
+        if (!isHamburgerVisible()) {
+          mainNav.classList.remove("is-open");
+          navToggle.setAttribute("aria-expanded", "false");
+        }
+      } else if (mainNav.classList.contains("is-open")) {
+        setBodyScrollLocked(true);
+      }
+    }
+
+    if (mobileScrollLockQuery.addEventListener) {
+      mobileScrollLockQuery.addEventListener("change", unlockIfNeeded);
+    } else if (mobileScrollLockQuery.addListener) {
+      mobileScrollLockQuery.addListener(unlockIfNeeded);
+    }
+    window.addEventListener("resize", unlockIfNeeded);
   }
 
   // The "Services" toggle is a real link: it always navigates to services.html

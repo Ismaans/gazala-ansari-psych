@@ -1631,6 +1631,30 @@ li::marker {
 
   .nav-bar__inner {
     position: relative;
+    overflow: visible;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    /* At least 16px from the edge; keep container padding + safe area */
+    padding-right: max(1rem, var(--space-md), env(safe-area-inset-right, 0px));
+  }
+
+  /* Logo may shrink; Menu button never does */
+  .logo {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: calc(100% - 5.5rem);
+  }
+
+  .logo__text {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .nav-toggle {
+    flex-shrink: 0;
+    margin-left: 0.5rem;
   }
 }
 
