@@ -13,42 +13,54 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="utility-bar">
-      <div class="container utility-bar__inner">
-        <p>In-Person &amp; Telehealth Available <span class="utility-bar__sep" aria-hidden="true">|</span> <a href="tel:+17032248983">(703) 224-8983</a> <span class="utility-bar__sep" aria-hidden="true">|</span> <a href="mailto:drgansari@ansarillc.hush.com">drgansari@ansarillc.hush.com</a></p>
-      </div>
-    </div>
-    <div class="nav-bar">
-      <div class="container nav-bar__inner">
-        <a href="index.html" class="logo" aria-label="Dr. Gazala A. Ansari — Home">
-          <img src="images/logo.png" alt="" class="logo__img" aria-hidden="true">
-          <span class="logo__text">Dr. Gazala A. Ansari, PhD<span>Clinical Psychologist · Alexandria, VA</span></span>
-        </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <header class="site-header">
+    <div class="header-bar">
+      <div class="container">
+        <div class="header-bar__top">
+          <a href="index.html" class="logo" aria-label="Ansari &amp; Associates — Home">
+            <img src="images/logo.png" alt="" class="logo__img" aria-hidden="true">
+            <span class="logo__text">Ansari &amp; Associates<span>Mental Health · Alexandria, VA</span></span>
+          </a>
+          <div class="header-bar__right">
+            <a class="header-phone" href="tel:+17032248983">(703) 224-8983</a>
+            <div class="header-quick-links">
+              <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1v-9.5z"/></svg> Home</a>
+              <a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1z"/><path d="M4 7l8 6 8-6"/></svg> Contact</a>
+            </div>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+          </div>
+        </div>
         <nav class="main-nav" id="main-nav" aria-label="Main navigation">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="team.html">Our Team</a></li>
+            <li class="nav-mobile-only"><a href="index.html">Home</a></li>
+            <li class="nav-dropdown nav-dropdown--team">
+              <a href="team.html" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Our Team</a>
+              <ul class="nav-dropdown__menu">
+                <li><a href="about.html">Dr. Gazala Ansari</a></li>
+                <li><a href="team-emily.html">Mrs. Emily Apyan</a></li>
+                <li><a href="team-shelby.html">Mrs. Shelby Grant-Workman</a></li>
+                <li><a href="team-stancell.html">Dr. Waltrina Stancell</a></li>
+              </ul>
+            </li>
             <li class="nav-dropdown">
               <a href="services.html" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Services</a>
               <ul class="nav-dropdown__menu">
                 <li><a href="services.html#therapy">Therapy &amp; Clinical Services</a></li>
-                <li><a href="services.html#issues">Issues I Work With</a></li>
+                <li><a href="services.html#issues">Issues We Work With</a></li>
                 <li><a href="services.html#availability">Availability</a></li>
               </ul>
             </li>
+            <!-- FLAG: Fees page does not exist (removed earlier); skipped per instructions -->
             <li class="nav-dropdown nav-dropdown--resources">
-              <a href="know-your-provider.html" class="nav-dropdown__toggle" aria-haspopup="true">Resources</a>
+              <a href="resources.html" class="nav-dropdown__toggle" aria-haspopup="true">Resources</a>
               <ul class="nav-dropdown__menu">
-                <li><a href="know-your-provider.html">Know Your Provider</a></li>
-                <li><a href="why-local-matters.html">Why Local Matters</a></li>
+                <li><a href="resources.html#know-your-provider">Know Your Provider</a></li>
+                <li><a href="resources.html#why-local-matters">Why Local Matters</a></li>
+                <li><a href="resources.html#navigating-insurance">Navigating Insurance</a></li>
               </ul>
             </li>
             <li><a href="faq.html" aria-current="page">FAQ</a></li>
-            
-            <li><a href="contact.html">Contact</a></li>
+            <li class="nav-mobile-only"><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -69,7 +81,7 @@
           <details class="faq-item">
             <summary>Do I need a referral or diagnosis to book?</summary>
             <div class="faq-item__answer">
-              <p>No referral is needed. You can contact me directly.</p>
+              <p>No referral is needed. You can contact us directly.</p>
             </div>
           </details>
 
@@ -83,14 +95,14 @@
           <details class="faq-item">
             <summary>Do you offer telehealth/online sessions?</summary>
             <div class="faq-item__answer">
-              <p>Yes. I offer both in-person and telehealth sessions. Please contact my office to confirm your eligibility.</p>
+              <p>Yes. We offer both in-person and telehealth sessions. Please contact our office to confirm your eligibility.</p>
             </div>
           </details>
 
           <details class="faq-item">
             <summary>What ages do you work with?</summary>
             <div class="faq-item__answer">
-              <p>I work with clients ages 4 and up, including children (ages 6–10), teens, and adults.</p>
+              <p>We work with clients ages 4 and up, including children (ages 6–10), teens, and adults.</p>
             </div>
           </details>
 
@@ -111,14 +123,14 @@
           <details class="faq-item">
             <summary>What is the difference between a psychologist and a psychiatrist?</summary>
             <div class="faq-item__answer">
-              <p>A psychologist holds a doctoral degree (PhD or PsyD) and specializes in therapy, assessment, and evaluation. A psychiatrist is a medical doctor who primarily prescribes medication. I am a psychologist and do not prescribe medication.</p>
+              <p>A psychologist holds a doctoral degree (PhD or PsyD) and specializes in therapy, assessment, and evaluation. A psychiatrist is a medical doctor who primarily prescribes medication. Our psychologists do not prescribe medication.</p>
             </div>
           </details>
 
           <details class="faq-item">
             <summary>What should I expect at my first appointment?</summary>
             <div class="faq-item__answer">
-              <p>Your first session is a chance for me to understand your concerns, personal history, and goals. Together, we will discuss the best approach for your needs and determine whether my practice is the right fit.</p>
+              <p>Your first session is a chance for us to understand your concerns, personal history, and goals. Together, we will discuss the best approach for your needs and determine whether our practice is the right fit.</p>
             </div>
           </details>
         </div>
@@ -127,35 +139,37 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+    <footer class="site-footer">
     <div class="container">
       <div class="crisis-box">
         <h3>Crisis Resources</h3>
         <p>This website is not for emergencies. If you or someone you know is in immediate danger, call <strong>911</strong>. For mental health crises, call or text <strong>988</strong> (Suicide &amp; Crisis Lifeline). You may also text <strong>HOME</strong> to <strong>741741</strong> to reach the Crisis Text Line.</p>
       </div>
-      <div class="footer-grid">
-        <div>
-          <h3>Ansari &amp; Associates, LLC</h3>
-          <p><a href="tel:+17032248983">(703) 224-8983</a></p>
-          <p><a href="mailto:drgansari@ansarillc.hush.com">drgansari@ansarillc.hush.com</a></p>
-          <p><a href="https://www.google.com/maps/search/?api=1&query=3311+Duke+St,+Alexandria,+VA+22314" target="_blank" rel="noopener noreferrer">3311 Duke St<br>Alexandria, VA 22314</a></p>
-        </div>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <h3>Navigation</h3>
+      <div class="footer-links">
+        <div class="footer-links__primary">
+          <nav class="footer-nav footer-nav--primary" aria-label="Primary footer navigation">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html">Make an Appointment</a></li>
+            </ul>
+          </nav>
+</div>
+        <div class="footer-links__divider" aria-hidden="true"></div>
+        <nav class="footer-nav footer-nav--secondary" aria-label="Secondary footer navigation">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
             <li><a href="team.html">Our Team</a></li>
-            <li><a href="services.html">Services</a></li>
             <li><a href="faq.html">FAQ</a></li>
-            <li><a href="know-your-provider.html">Know Your Provider</a></li>
-            <li><a href="why-local-matters.html">Why Local Matters</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="resources.html#know-your-provider">Know Your Provider</a></li>
+            <li><a href="resources.html#why-local-matters">Why Local Matters</a></li>
+            <li><a href="resources.html#navigating-insurance">Navigating Insurance</a></li>
             <li><a href="privacy.html">Privacy Policy</a></li>
           </ul>
         </nav>
       </div>
-      <p class="legal-disclaimer">The content on this website is for informational purposes only and does not constitute medical advice, diagnosis, or treatment. I am a licensed psychologist in the Commonwealth of Virginia.</p>
+      <p class="legal-disclaimer">The content on this website is for informational purposes only and does not constitute medical advice, diagnosis, or treatment. Ansari &amp; Associates, LLC clinicians are licensed in the Commonwealth of Virginia, with additional licensure in Maryland and Washington, DC.</p>
       <p class="footer-copy">&copy; 2025 Ansari &amp; Associates, LLC. All rights reserved.</p>
     </div>
   </footer>

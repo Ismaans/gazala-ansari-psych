@@ -13,42 +13,54 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="utility-bar">
-      <div class="container utility-bar__inner">
-        <p>In-Person &amp; Telehealth Available <span class="utility-bar__sep" aria-hidden="true">|</span> <a href="tel:+17032248983">(703) 224-8983</a> <span class="utility-bar__sep" aria-hidden="true">|</span> <a href="mailto:drgansari@ansarillc.hush.com">drgansari@ansarillc.hush.com</a></p>
-      </div>
-    </div>
-    <div class="nav-bar">
-      <div class="container nav-bar__inner">
-        <a href="index.html" class="logo" aria-label="Dr. Gazala A. Ansari — Home">
-          <img src="images/logo.png" alt="" class="logo__img" aria-hidden="true">
-          <span class="logo__text">Dr. Gazala A. Ansari, PhD<span>Clinical Psychologist · Alexandria, VA</span></span>
-        </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <header class="site-header">
+    <div class="header-bar">
+      <div class="container">
+        <div class="header-bar__top">
+          <a href="index.html" class="logo" aria-label="Ansari &amp; Associates — Home">
+            <img src="images/logo.png" alt="" class="logo__img" aria-hidden="true">
+            <span class="logo__text">Ansari &amp; Associates<span>Mental Health · Alexandria, VA</span></span>
+          </a>
+          <div class="header-bar__right">
+            <a class="header-phone" href="tel:+17032248983">(703) 224-8983</a>
+            <div class="header-quick-links">
+              <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1v-9.5z"/></svg> Home</a>
+              <a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1z"/><path d="M4 7l8 6 8-6"/></svg> Contact</a>
+            </div>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+          </div>
+        </div>
         <nav class="main-nav" id="main-nav" aria-label="Main navigation">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" aria-current="page">About</a></li>
-            <li><a href="team.html">Our Team</a></li>
+            <li class="nav-mobile-only"><a href="index.html">Home</a></li>
+            <li class="nav-dropdown nav-dropdown--team">
+              <a href="team.html" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Our Team</a>
+              <ul class="nav-dropdown__menu">
+                <li><a href="about.html">Dr. Gazala Ansari</a></li>
+                <li><a href="team-emily.html">Mrs. Emily Apyan</a></li>
+                <li><a href="team-shelby.html">Mrs. Shelby Grant-Workman</a></li>
+                <li><a href="team-stancell.html">Dr. Waltrina Stancell</a></li>
+              </ul>
+            </li>
             <li class="nav-dropdown">
               <a href="services.html" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Services</a>
               <ul class="nav-dropdown__menu">
                 <li><a href="services.html#therapy">Therapy &amp; Clinical Services</a></li>
-                <li><a href="services.html#issues">Issues I Work With</a></li>
+                <li><a href="services.html#issues">Issues We Work With</a></li>
                 <li><a href="services.html#availability">Availability</a></li>
               </ul>
             </li>
+            <!-- FLAG: Fees page does not exist (removed earlier); skipped per instructions -->
             <li class="nav-dropdown nav-dropdown--resources">
-              <a href="know-your-provider.html" class="nav-dropdown__toggle" aria-haspopup="true">Resources</a>
+              <a href="resources.html" class="nav-dropdown__toggle" aria-haspopup="true">Resources</a>
               <ul class="nav-dropdown__menu">
-                <li><a href="know-your-provider.html">Know Your Provider</a></li>
-                <li><a href="why-local-matters.html">Why Local Matters</a></li>
+                <li><a href="resources.html#know-your-provider">Know Your Provider</a></li>
+                <li><a href="resources.html#why-local-matters">Why Local Matters</a></li>
+                <li><a href="resources.html#navigating-insurance">Navigating Insurance</a></li>
               </ul>
             </li>
             <li><a href="faq.html">FAQ</a></li>
-            
-            <li><a href="contact.html">Contact</a></li>
+            <li class="nav-mobile-only"><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -70,86 +82,100 @@
             </figure>
             <div class="about-intro__content">
               <h1>Dr. Gazala Ansari, PhD</h1>
-              <p class="about-intro__title">Senior Clinician and Supervisor · Alexandria, VA</p>
-              <article class="card credentials-intro-card" aria-label="Credentials overview">
-                <ul>
-                  <li><strong>Degree:</strong> PhD, Psychology — American University, 2006</li>
-                  <li><strong>License:</strong> Virginia #0810004131 (since 2010)</li>
-                  <li><strong>Experience:</strong> 14+ years in clinical practice</li>
-                  <li><strong>Verified:</strong> Psychology Today</li>
-                </ul>
-              </article>
-              <div style="margin-top: var(--space-sm);">
-                <span class="languages-label">Languages spoken</span>
-                <ul class="languages-inline" aria-label="Languages spoken">
-                  <li><span class="flag" aria-hidden="true">🇺🇸</span> English</li>
-                  <li><span class="flag" aria-hidden="true">🇮🇳</span> Hindi</li>
-                  <li><span class="flag" aria-hidden="true">🇪🇸</span> Spanish</li>
-                  <li><span class="flag" aria-hidden="true">🇵🇰</span> Urdu</li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
 
         <div class="content-block">
           <h2>Who I Am</h2>
-          <p>I am a clinical psychologist, neuropsychologist, forensic psychologist, and intellectual &amp; developmental disabilities psychologist with over 14 years of experience. I earned my Doctor of Philosophy in Psychology from American University in 2006 and have been licensed in the State of Virginia since 2010.</p>
-          <p>I have been practicing clinical psychology for over 20 years, including 17 years in private practice. I have taught as an adjunct professor, supervised and mentored early-career clinicians, worked in schools and college counseling centers, and consulted in forensic psychological matters. My areas of specialty include depression, anxiety, mood disorders, trauma, ADHD, and managing physical and somatic illnesses such as IBS, migraines, epilepsy, and fibromyalgia through talk therapy.</p>
-          <p>With over 20 years of experience in clinical psychology — including 17 years in private practice — I have worked as an adjunct professor, clinical supervisor and mentor to early-career clinicians, school-based therapist throughout the DMV area, and forensic psychological consultant. I specialize in psychological, neuropsychological, and educational testing, psychotherapy for adults, adolescents, and children, and evaluation of workman's compensation patients. I have also had notable success helping individuals manage the psychological aspects of physical and somatic illnesses, including IBS, migraines, fibromyalgia, epilepsy, and chronic headaches through evidence-based talk therapy.</p>
+          <p>Dr. Ansari is a Clinical Psychologist with over 20 years of experience, including 17 years in private practice. She earned her Doctor of Philosophy in Psychology from American University in 2006 and has been licensed in the Commonwealth of Virginia since 2010. She works with clients in English, Hindi, Spanish, and Urdu.</p>
+          <p>Dr. Ansari founded and leads Ansari &amp; Associates in Alexandria, Virginia, where she provides therapy and comprehensive psychological evaluation to the surrounding community. Before entering private practice, she worked at universities, the Women's Center in Virginia, and public charter schools throughout the DMV area.</p>
+          <p>Her practice centers on psychological, neuropsychological, and educational testing, along with psychotherapy for adults and adolescents. She has worked extensively with the Department of Labor (DOL) and private third-party companies on workman's compensation cases, and has had particular success helping clients manage the psychological aspects of chronic physical and somatic conditions — including IBS, migraines, fibromyalgia, epilepsy, and chronic headaches — through evidence-based talk therapy.</p>
         </div>
 
         <div class="content-block">
           <h2>My Approach</h2>
-          <p>I work diligently with my clients to identify and examine maladaptive patterns that cause obstacles to living well. Through this process, the elements needed for positive change — such as insight and acceptance — materialize and help move one toward a more healthy and fulfilling life. I place great value on the relationship between therapist and client, and strive to create a safe, comfortable, confidential, and nonjudgmental space.</p>
-          <p>My therapy draws on multiple evidence-based frameworks:</p>
-          <ul class="approach-list">
-            <li>Cognitive Behavioral Therapy (CBT)</li>
-            <li>Psychodynamic Therapy</li>
-            <li>Insight-Oriented Therapy</li>
-            <li>Eclectic/Integrative Approaches</li>
-            <li>Psychological Testing &amp; Evaluation</li>
-          </ul>
+          <p>Dr. Ansari takes a developmental psychological approach, understanding each client within the context of their life stage and personal history.</p>
         </div>
 
         <div class="content-block">
-          <h2>Background</h2>
-          <p>Prior to private practice, I worked at universities, the Women's Center in Virginia, and at schools throughout the DMV area, providing therapy and conducting evaluations for ADHD/ADD, learning disabilities, emotional challenges, and neuropsychological issues for clients ages 4 and up.</p>
+          <h2>Specialties</h2>
+          <div class="specialty-groups">
+            <div class="specialty-group">
+              <h3>Populations I Work With</h3>
+              <ul class="tag-list" aria-label="Populations">
+              <li>Adults</li>
+              <li>Adolescents</li>
+              </ul>
+            </div>
+            <div class="specialty-group">
+              <h3>Diagnoses &amp; Areas of Focus</h3>
+              <ul class="tag-list" aria-label="Diagnoses and areas of focus">
+              <li>Anxiety</li>
+              <li>Depression</li>
+              <li>Coping Skills</li>
+              <li>Divorce</li>
+              <li>Domestic Abuse &amp; Violence</li>
+              <li>Family Conflict</li>
+              <li>Grief</li>
+              <li>Emotional Disturbance</li>
+              <li>Impulse Control</li>
+              <li>Personality Disorders</li>
+              <li>Self-Esteem</li>
+              <li>OCD</li>
+              <li>Trauma &amp; PTSD</li>
+              <li>Eating Disorders</li>
+              <li>Educational &amp; Learning Disabilities</li>
+              <li>ADHD</li>
+              <li>Somatic Illness (IBS, Migraines, Fibromyalgia, Epilepsy, Chronic Headaches)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-block availability-block">
+          <h2>Availability</h2>
+          <ul>
+            <li>In person and online available</li>
+            <li>Monday through Friday</li>
+          </ul>
         </div>
 
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+    <footer class="site-footer">
     <div class="container">
       <div class="crisis-box">
         <h3>Crisis Resources</h3>
         <p>This website is not for emergencies. If you or someone you know is in immediate danger, call <strong>911</strong>. For mental health crises, call or text <strong>988</strong> (Suicide &amp; Crisis Lifeline). You may also text <strong>HOME</strong> to <strong>741741</strong> to reach the Crisis Text Line.</p>
       </div>
-      <div class="footer-grid">
-        <div>
-          <h3>Ansari &amp; Associates, LLC</h3>
-          <p><a href="tel:+17032248983">(703) 224-8983</a></p>
-          <p><a href="mailto:drgansari@ansarillc.hush.com">drgansari@ansarillc.hush.com</a></p>
-          <p><a href="https://www.google.com/maps/search/?api=1&query=3311+Duke+St,+Alexandria,+VA+22314" target="_blank" rel="noopener noreferrer">3311 Duke St<br>Alexandria, VA 22314</a></p>
-        </div>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <h3>Navigation</h3>
+      <div class="footer-links">
+        <div class="footer-links__primary">
+          <nav class="footer-nav footer-nav--primary" aria-label="Primary footer navigation">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html">Make an Appointment</a></li>
+            </ul>
+          </nav>
+</div>
+        <div class="footer-links__divider" aria-hidden="true"></div>
+        <nav class="footer-nav footer-nav--secondary" aria-label="Secondary footer navigation">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
             <li><a href="team.html">Our Team</a></li>
-            <li><a href="services.html">Services</a></li>
             <li><a href="faq.html">FAQ</a></li>
-            <li><a href="know-your-provider.html">Know Your Provider</a></li>
-            <li><a href="why-local-matters.html">Why Local Matters</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="resources.html#know-your-provider">Know Your Provider</a></li>
+            <li><a href="resources.html#why-local-matters">Why Local Matters</a></li>
+            <li><a href="resources.html#navigating-insurance">Navigating Insurance</a></li>
             <li><a href="privacy.html">Privacy Policy</a></li>
           </ul>
         </nav>
       </div>
-      <p class="legal-disclaimer">The content on this website is for informational purposes only and does not constitute medical advice, diagnosis, or treatment. I am a licensed psychologist in the Commonwealth of Virginia.</p>
+      <p class="legal-disclaimer">The content on this website is for informational purposes only and does not constitute medical advice, diagnosis, or treatment. Ansari &amp; Associates, LLC clinicians are licensed in the Commonwealth of Virginia, with additional licensure in Maryland and Washington, DC.</p>
       <p class="footer-copy">&copy; 2025 Ansari &amp; Associates, LLC. All rights reserved.</p>
     </div>
   </footer>

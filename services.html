@@ -13,42 +13,54 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="utility-bar">
-      <div class="container utility-bar__inner">
-        <p>In-Person &amp; Telehealth Available <span class="utility-bar__sep" aria-hidden="true">|</span> <a href="tel:+17032248983">(703) 224-8983</a> <span class="utility-bar__sep" aria-hidden="true">|</span> <a href="mailto:drgansari@ansarillc.hush.com">drgansari@ansarillc.hush.com</a></p>
-      </div>
-    </div>
-    <div class="nav-bar">
-      <div class="container nav-bar__inner">
-        <a href="index.html" class="logo" aria-label="Dr. Gazala A. Ansari — Home">
-          <img src="images/logo.png" alt="" class="logo__img" aria-hidden="true">
-          <span class="logo__text">Dr. Gazala A. Ansari, PhD<span>Clinical Psychologist · Alexandria, VA</span></span>
-        </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <header class="site-header">
+    <div class="header-bar">
+      <div class="container">
+        <div class="header-bar__top">
+          <a href="index.html" class="logo" aria-label="Ansari &amp; Associates — Home">
+            <img src="images/logo.png" alt="" class="logo__img" aria-hidden="true">
+            <span class="logo__text">Ansari &amp; Associates<span>Mental Health · Alexandria, VA</span></span>
+          </a>
+          <div class="header-bar__right">
+            <a class="header-phone" href="tel:+17032248983">(703) 224-8983</a>
+            <div class="header-quick-links">
+              <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1v-9.5z"/></svg> Home</a>
+              <a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1z"/><path d="M4 7l8 6 8-6"/></svg> Contact</a>
+            </div>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+          </div>
+        </div>
         <nav class="main-nav" id="main-nav" aria-label="Main navigation">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="team.html">Our Team</a></li>
+            <li class="nav-mobile-only"><a href="index.html">Home</a></li>
+            <li class="nav-dropdown nav-dropdown--team">
+              <a href="team.html" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Our Team</a>
+              <ul class="nav-dropdown__menu">
+                <li><a href="about.html">Dr. Gazala Ansari</a></li>
+                <li><a href="team-emily.html">Mrs. Emily Apyan</a></li>
+                <li><a href="team-shelby.html">Mrs. Shelby Grant-Workman</a></li>
+                <li><a href="team-stancell.html">Dr. Waltrina Stancell</a></li>
+              </ul>
+            </li>
             <li class="nav-dropdown">
-              <a href="services.html" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Services</a>
+              <a href="services.html" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true" aria-current="page">Services</a>
               <ul class="nav-dropdown__menu">
                 <li><a href="services.html#therapy">Therapy &amp; Clinical Services</a></li>
-                <li><a href="services.html#issues">Issues I Work With</a></li>
+                <li><a href="services.html#issues">Issues We Work With</a></li>
                 <li><a href="services.html#availability">Availability</a></li>
               </ul>
             </li>
+            <!-- FLAG: Fees page does not exist (removed earlier); skipped per instructions -->
             <li class="nav-dropdown nav-dropdown--resources">
-              <a href="know-your-provider.html" class="nav-dropdown__toggle" aria-haspopup="true">Resources</a>
+              <a href="resources.html" class="nav-dropdown__toggle" aria-haspopup="true">Resources</a>
               <ul class="nav-dropdown__menu">
-                <li><a href="know-your-provider.html">Know Your Provider</a></li>
-                <li><a href="why-local-matters.html">Why Local Matters</a></li>
+                <li><a href="resources.html#know-your-provider">Know Your Provider</a></li>
+                <li><a href="resources.html#why-local-matters">Why Local Matters</a></li>
+                <li><a href="resources.html#navigating-insurance">Navigating Insurance</a></li>
               </ul>
             </li>
             <li><a href="faq.html">FAQ</a></li>
-            
-            <li><a href="contact.html">Contact</a></li>
+            <li class="nav-mobile-only"><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -78,21 +90,19 @@
             <li>ADHD &amp; Learning Disability Evaluations (ages 4+)</li>
             <li>Forensic Psychological Assessment</li>
             <li>Counseling for somatic complaints (IBS, fibromyalgia, seizures, headaches/migraines)</li>
-            <li>Hypnosis and Biofeedback</li>
-            <li>Behavior Analysis and Therapy</li>
             <li>Psychoeducational Evaluation and Consultation</li>
           </ul>
         </div>
 
         <div class="content-block" id="issues">
-          <h2>Issues I Work With</h2>
+          <h2>Issues We Work With</h2>
           <p><strong>Primary focus areas:</strong></p>
           <div class="focus-areas" role="list" aria-label="Primary focus areas">
             <span class="focus-area" role="listitem">Relationship Issues</span>
             <span class="focus-area" role="listitem">Depression</span>
             <span class="focus-area" role="listitem">ADHD</span>
           </div>
-          <p style="margin-top: var(--space-lg);"><strong>Also works with:</strong></p>
+          <p style="margin-top: var(--space-lg);"><strong>We also work with:</strong></p>
           <ul class="tag-list" aria-label="Additional areas of focus">
             <li>Anxiety</li>
             <li>Autism/Asperger's Syndrome</li>
@@ -120,48 +130,162 @@
         </div>
 
         <div class="content-block" id="what-these-mean">
-          <h2>What These Mean</h2>
-          <p>Plain-language explanations of some of the concerns we most often help with.</p>
+          <h2>What We Treat</h2>
+          <p>Plain-language explanations of the concerns we help with — and a short example of what each can look like in everyday life.</p>
           <dl class="term-grid">
             <div class="term-grid__row">
-              <dt>Depression</dt>
-              <dd>Persistent low mood, loss of interest, or feelings of hopelessness that interfere with daily functioning.</dd>
-            </div>
-            <div class="term-grid__row">
-              <dt>Trauma &amp; PTSD</dt>
-              <dd>Lasting emotional distress following a frightening or overwhelming experience, including flashbacks, hypervigilance, and avoidance.</dd>
-            </div>
-            <div class="term-grid__row">
               <dt>Anxiety</dt>
-              <dd>Excessive worry, fear, or nervousness that feels difficult to control and impacts daily life.</dd>
+              <dd>
+                <p>Worry or fear that feels bigger than the situation and hard to turn off, often showing up as tension, restlessness, or trouble relaxing.</p>
+                <p class="term-example">For example, you might lie awake replaying tomorrow’s meeting, or feel your heart race in situations that used to feel manageable.</p>
+              </dd>
             </div>
             <div class="term-grid__row">
-              <dt>Bipolar Disorder</dt>
-              <dd>Cycles of extreme high-energy (manic) and low-energy (depressive) moods that disrupt relationships and daily functioning.</dd>
-            </div>
-            <div class="term-grid__row">
-              <dt>Personality Disorders</dt>
-              <dd>Deeply ingrained patterns of thinking and behavior that cause significant distress or difficulty in relationships.</dd>
-            </div>
-            <div class="term-grid__row">
-              <dt>Behavioral Issues</dt>
-              <dd>Patterns of conduct that negatively affect one's ability to function at home, school, or work.</dd>
+              <dt>Depression</dt>
+              <dd>
+                <p>A lasting low mood or loss of interest in things you usually care about, which can drain energy and make daily tasks feel heavier than they should.</p>
+                <p class="term-example">For example, getting out of bed, answering texts, or enjoying hobbies may take far more effort than they used to.</p>
+              </dd>
             </div>
             <div class="term-grid__row">
               <dt>ADHD</dt>
-              <dd>Difficulty sustaining attention, controlling impulses, and regulating activity level, affecting children and adults.</dd>
+              <dd>
+                <p>Ongoing difficulty focusing, organizing, or managing impulses and activity level in ways that get in the way of school, work, or home life.</p>
+                <p class="term-example">For example, you may start many tasks but finish few, miss details in conversations, or feel restless even when you want to sit still.</p>
+              </dd>
             </div>
             <div class="term-grid__row">
-              <dt>Life Transitions</dt>
-              <dd>Major changes such as divorce, job loss, relocation, or retirement that create stress and emotional uncertainty.</dd>
+              <dt>Trauma &amp; PTSD</dt>
+              <dd>
+                <p>Distress that continues after a frightening or overwhelming experience, sometimes including vivid memories, feeling “on edge,” or avoiding reminders of what happened.</p>
+                <p class="term-example">For example, a loud sound, a certain place, or a news story may suddenly bring back the same fear or body reaction as the original event.</p>
+              </dd>
             </div>
             <div class="term-grid__row">
-              <dt>Work/Career-Related Stress</dt>
-              <dd>Burnout, workplace conflict, performance anxiety, or difficulty balancing professional and personal demands.</dd>
+              <dt>OCD</dt>
+              <dd>
+                <p>Unwanted thoughts that keep returning, paired with urges to do certain actions or mental rituals to feel safer or “right” — even when you know it takes a lot of time.</p>
+                <p class="term-example">For example, you might check the stove repeatedly before leaving, or feel unable to stop a thought loop until you complete a specific routine.</p>
+              </dd>
+            </div>
+            <div class="term-grid__row">
+              <dt>Personality Disorders</dt>
+              <dd>
+                <p>Long-standing patterns of relating to yourself and others that create repeated conflict, emotional intensity, or difficulty keeping stable relationships.</p>
+                <p class="term-example">For example, relationships may swing quickly between closeness and rupture, or everyday disagreements may feel threatening or hard to recover from.</p>
+              </dd>
+            </div>
+            <div class="term-grid__row">
+              <dt>Coping Skills</dt>
+              <dd>
+                <p>The practical tools people use to handle stress, strong emotions, and hard situations — and the work of building healthier ones when old habits no longer help.</p>
+                <p class="term-example">For example, instead of shutting down after a stressful day, you might learn calmer ways to pause, name what you feel, and respond more intentionally.</p>
+              </dd>
+            </div>
+            <div class="term-grid__row">
+              <dt>Divorce</dt>
+              <dd>
+                <p>The emotional and practical strain of ending a marriage or partnership, including grief, anger, co-parenting stress, and rebuilding a new sense of self.</p>
+                <p class="term-example">For example, you may feel torn between relief and loss, or struggle to communicate with an ex while protecting your children’s routines.</p>
+              </dd>
+            </div>
+            <div class="term-grid__row">
+              <dt>Domestic Abuse &amp; Violence</dt>
+              <dd>
+                <p>Harm within a home or intimate relationship — physical, emotional, verbal, or controlling behavior — that leaves a person feeling unsafe, diminished, or trapped.</p>
+                <p class="term-example">For example, a partner may monitor your phone, isolate you from friends, or use intimidation so you feel you cannot speak up or leave.</p>
+              </dd>
+            </div>
+            <div class="term-grid__row">
+              <dt>Family Conflict</dt>
+              <dd>
+                <p>Ongoing tension, arguments, or distance among family members that makes home feel stressful rather than supportive.</p>
+                <p class="term-example">For example, holiday gatherings may end in the same fight, or adult siblings may avoid each other after years of unresolved resentment.</p>
+              </dd>
+            </div>
+            <div class="term-grid__row">
+              <dt>Grief</dt>
+              <dd>
+                <p>The natural but often overwhelming response to loss — of a person, relationship, health, or chapter of life — that can affect mood, sleep, and meaning.</p>
+                <p class="term-example">For example, months after a death you may still feel waves of sadness in ordinary moments, like hearing a familiar song or passing a favorite restaurant.</p>
+              </dd>
+            </div>
+            <div class="term-grid__row">
+              <dt>Emotional Disturbance</dt>
+              <dd>
+                <p>Strong or unpredictable emotions that feel hard to manage and begin to disrupt school, work, friendships, or day-to-day functioning.</p>
+                <p class="term-example">For example, a child may have frequent outbursts at school, or an adult may feel emotions shift so quickly that others struggle to keep up.</p>
+              </dd>
+            </div>
+            <div class="term-grid__row">
+              <dt>Impulse Control</dt>
+              <dd>
+                <p>Difficulty pausing before acting, which can lead to choices you later regret — with spending, anger, risk-taking, or other habits.</p>
+                <p class="term-example">For example, you might say something hurtful in the heat of the moment, or make a large purchase you cannot afford and feel stuck afterward.</p>
+              </dd>
+            </div>
+            <div class="term-grid__row">
+              <dt>Self-Esteem</dt>
+              <dd>
+                <p>How you see and value yourself — including harsh self-criticism, feeling “not enough,” or tying your worth only to achievement or others’ approval.</p>
+                <p class="term-example">For example, a compliment may bounce off, while a small mistake at work can leave you replaying it for days.</p>
+              </dd>
+            </div>
+            <div class="term-grid__row">
+              <dt>Eating Disorders</dt>
+              <dd>
+                <p>Distressing patterns around food, body image, or weight that can include restriction, bingeing, purging, or rigid rules that take over daily life.</p>
+                <p class="term-example">For example, you might skip meals to “make up” for eating, avoid social events that involve food, or feel intense guilt after eating.</p>
+              </dd>
+            </div>
+            <div class="term-grid__row">
+              <dt>Educational &amp; Learning Disabilities</dt>
+              <dd>
+                <p>Differences in how someone learns or processes information that can make reading, writing, math, or organization harder than expected for their age or intelligence.</p>
+                <p class="term-example">For example, a bright student may read slowly despite trying hard, or need much more time than peers to finish written assignments.</p>
+              </dd>
+            </div>
+            <div class="term-grid__row">
+              <dt>School Issues</dt>
+              <dd>
+                <p>Challenges related to school performance, behavior, attendance, peer stress, or fitting in that leave a student struggling or avoiding school.</p>
+                <p class="term-example">For example, a teen may start refusing school on test days, or a younger child may fall behind after bullying or classroom anxiety.</p>
+              </dd>
+            </div>
+            <div class="term-grid__row">
+              <dt>Parenting</dt>
+              <dd>
+                <p>The stress and uncertainty of raising children — including discipline, communication, co-parenting, and supporting a child’s emotional needs.</p>
+                <p class="term-example">For example, you may feel stuck between setting limits and keeping connection, or disagree with a co-parent about bedtime or screen time.</p>
+              </dd>
             </div>
             <div class="term-grid__row">
               <dt>Relationship Issues</dt>
-              <dd>Struggles with communication, trust, conflict, or intimacy in romantic, family, or professional relationships.</dd>
+              <dd>
+                <p>Trouble with communication, trust, closeness, or conflict in romantic, family, friend, or work relationships.</p>
+                <p class="term-example">For example, small disagreements may escalate quickly, or you may feel lonely even when you are not alone.</p>
+              </dd>
+            </div>
+            <div class="term-grid__row">
+              <dt>Life Transitions</dt>
+              <dd>
+                <p>Major life changes — such as a move, new job, retirement, empty nest, or new role — that shake your routines and sense of identity.</p>
+                <p class="term-example">For example, after retiring or becoming a new parent, you may feel unmoored even when the change was wanted.</p>
+              </dd>
+            </div>
+            <div class="term-grid__row">
+              <dt>Bipolar Disorder</dt>
+              <dd>
+                <p>Shifts between unusually high-energy or elevated periods and low, depressive periods that can disrupt sleep, judgment, work, and relationships.</p>
+                <p class="term-example">For example, you might go days with little sleep and racing ideas, then crash into weeks of exhaustion and hopelessness.</p>
+              </dd>
+            </div>
+            <div class="term-grid__row">
+              <dt>Behavioral Issues</dt>
+              <dd>
+                <p>Patterns of behavior that repeatedly cause problems at home, school, or work — such as aggression, defiance, withdrawal, or rule-breaking.</p>
+                <p class="term-example">For example, a child may get frequent office referrals, or an adult may notice the same conflict pattern showing up in every job.</p>
+              </dd>
             </div>
           </dl>
         </div>
@@ -169,9 +293,9 @@
         <div class="content-block availability-block" id="availability">
           <h2>Availability</h2>
           <ul>
-            <li>In-person sessions at my Alexandria, VA office</li>
-            <li>Telehealth sessions available (contact office to confirm eligibility)</li>
-            <li>Weekend appointments available by appointment</li>
+            <li>In-person sessions at our Alexandria, VA office</li>
+            <li>Telehealth sessions available (contact our office to confirm eligibility)</li>
+            <li>Evening and weekend appointments available with select providers</li>
           </ul>
         </div>
 
@@ -179,35 +303,37 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+    <footer class="site-footer">
     <div class="container">
       <div class="crisis-box">
         <h3>Crisis Resources</h3>
         <p>This website is not for emergencies. If you or someone you know is in immediate danger, call <strong>911</strong>. For mental health crises, call or text <strong>988</strong> (Suicide &amp; Crisis Lifeline). You may also text <strong>HOME</strong> to <strong>741741</strong> to reach the Crisis Text Line.</p>
       </div>
-      <div class="footer-grid">
-        <div>
-          <h3>Ansari &amp; Associates, LLC</h3>
-          <p><a href="tel:+17032248983">(703) 224-8983</a></p>
-          <p><a href="mailto:drgansari@ansarillc.hush.com">drgansari@ansarillc.hush.com</a></p>
-          <p><a href="https://www.google.com/maps/search/?api=1&query=3311+Duke+St,+Alexandria,+VA+22314" target="_blank" rel="noopener noreferrer">3311 Duke St<br>Alexandria, VA 22314</a></p>
-        </div>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <h3>Navigation</h3>
+      <div class="footer-links">
+        <div class="footer-links__primary">
+          <nav class="footer-nav footer-nav--primary" aria-label="Primary footer navigation">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html">Make an Appointment</a></li>
+            </ul>
+          </nav>
+</div>
+        <div class="footer-links__divider" aria-hidden="true"></div>
+        <nav class="footer-nav footer-nav--secondary" aria-label="Secondary footer navigation">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
             <li><a href="team.html">Our Team</a></li>
-            <li><a href="services.html">Services</a></li>
             <li><a href="faq.html">FAQ</a></li>
-            <li><a href="know-your-provider.html">Know Your Provider</a></li>
-            <li><a href="why-local-matters.html">Why Local Matters</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="resources.html#know-your-provider">Know Your Provider</a></li>
+            <li><a href="resources.html#why-local-matters">Why Local Matters</a></li>
+            <li><a href="resources.html#navigating-insurance">Navigating Insurance</a></li>
             <li><a href="privacy.html">Privacy Policy</a></li>
           </ul>
         </nav>
       </div>
-      <p class="legal-disclaimer">The content on this website is for informational purposes only and does not constitute medical advice, diagnosis, or treatment. I am a licensed psychologist in the Commonwealth of Virginia.</p>
+      <p class="legal-disclaimer">The content on this website is for informational purposes only and does not constitute medical advice, diagnosis, or treatment. Ansari &amp; Associates, LLC clinicians are licensed in the Commonwealth of Virginia, with additional licensure in Maryland and Washington, DC.</p>
       <p class="footer-copy">&copy; 2025 Ansari &amp; Associates, LLC. All rights reserved.</p>
     </div>
   </footer>

@@ -3,29 +3,56 @@
   const mainNav = document.querySelector(".main-nav");
 
   if (navToggle && mainNav) {
-    var mobileScrollLockQuery = window.matchMedia("(max-width: 768px)");
     var siteHeader = document.querySelector(".site-header");
-
-    function isMobileScrollLockViewport() {
-      return mobileScrollLockQuery.matches;
-    }
+    var lockedScrollY = 0;
+    var isScrollLocked = false;
 
     function isHamburgerVisible() {
       return window.getComputedStyle(navToggle).display !== "none";
     }
 
+    // iOS ignores overflow:hidden alone — pin the body while the menu is open.
     function setBodyScrollLocked(locked) {
-      if (locked && isMobileScrollLockViewport()) {
+      if (locked && isHamburgerVisible()) {
+        if (isScrollLocked) return;
+        isScrollLocked = true;
+        lockedScrollY = window.scrollY || window.pageYOffset || 0;
+        document.documentElement.style.overflow = "hidden";
         document.body.style.overflow = "hidden";
-      } else {
-        document.body.style.overflow = "";
+        document.body.style.position = "fixed";
+        document.body.style.top = "-" + lockedScrollY + "px";
+        document.body.style.left = "0";
+        document.body.style.right = "0";
+        document.body.style.width = "100%";
+        document.body.classList.add("nav-scroll-locked");
+        return;
+      }
+
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
+      document.body.classList.remove("nav-scroll-locked");
+
+      if (isScrollLocked) {
+        isScrollLocked = false;
+        window.scrollTo(0, lockedScrollY);
       }
     }
 
     function setNavOpen(open) {
+      var wasOpen = mainNav.classList.contains("is-open");
       mainNav.classList.toggle("is-open", open);
       navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-      setBodyScrollLocked(open);
+
+      if (open && !wasOpen) {
+        setBodyScrollLocked(true);
+      } else if (!open && wasOpen) {
+        setBodyScrollLocked(false);
+      }
 
       // When closing the whole menu, also collapse nested dropdowns
       if (!open) {
@@ -76,27 +103,35 @@
       closeNav();
     });
 
+    // Block background page scrolling via touch (iOS Safari)
+    document.addEventListener(
+      "touchmove",
+      function (e) {
+        if (!mainNav.classList.contains("is-open")) return;
+        if (!isHamburgerVisible()) return;
+        // Allow touch inside the open nav panel itself
+        if (mainNav.contains(e.target)) return;
+        e.preventDefault();
+      },
+      { passive: false }
+    );
+
     // Browser back / history navigation should never leave body locked
     window.addEventListener("popstate", closeNav);
 
-    // Leaving the mobile lock viewport (or leaving hamburger mode) must unlock
+    // Leaving hamburger mode must unlock scroll and close the panel
     function unlockIfNeeded() {
-      if (!isMobileScrollLockViewport() || !isHamburgerVisible()) {
-        document.body.style.overflow = "";
-        if (!isHamburgerVisible()) {
+      if (!isHamburgerVisible()) {
+        if (mainNav.classList.contains("is-open")) {
           mainNav.classList.remove("is-open");
           navToggle.setAttribute("aria-expanded", "false");
+          setBodyScrollLocked(false);
+        } else {
+          setBodyScrollLocked(false);
         }
-      } else if (mainNav.classList.contains("is-open")) {
-        setBodyScrollLocked(true);
       }
     }
 
-    if (mobileScrollLockQuery.addEventListener) {
-      mobileScrollLockQuery.addEventListener("change", unlockIfNeeded);
-    } else if (mobileScrollLockQuery.addListener) {
-      mobileScrollLockQuery.addListener(unlockIfNeeded);
-    }
     window.addEventListener("resize", unlockIfNeeded);
   }
 

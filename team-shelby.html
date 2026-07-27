@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Shelby Grant-Workman, LCSW, LICSW — Senior Associate at Ansari & Associates. Therapy for children, teens, and adults in Alexandria, VA.">
-  <title>Shelby Grant-Workman, LCSW, LICSW | Ansari &amp; Associates</title>
+  <meta name="description" content="Mrs. Shelby Grant-Workman, LCSW at Ansari & Associates. Therapy for children, teens, and adults in Alexandria, VA.">
+  <title>Mrs. Shelby Grant-Workman, LCSW | Ansari &amp; Associates</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -13,42 +13,54 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="utility-bar">
-      <div class="container utility-bar__inner">
-        <p>In-Person &amp; Telehealth Available <span class="utility-bar__sep" aria-hidden="true">|</span> <a href="tel:+15715545176">(571) 554-5176</a> <span class="utility-bar__sep" aria-hidden="true">|</span> <a href="mailto:drgansari@ansarillc.hush.com">drgansari@ansarillc.hush.com</a></p>
-      </div>
-    </div>
-    <div class="nav-bar">
-      <div class="container nav-bar__inner">
-        <a href="index.html" class="logo" aria-label="Dr. Gazala A. Ansari — Home">
-          <img src="images/logo.png" alt="" class="logo__img" aria-hidden="true">
-          <span class="logo__text">Dr. Gazala A. Ansari, PhD<span>Clinical Psychologist · Alexandria, VA</span></span>
-        </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <header class="site-header">
+    <div class="header-bar">
+      <div class="container">
+        <div class="header-bar__top">
+          <a href="index.html" class="logo" aria-label="Ansari &amp; Associates — Home">
+            <img src="images/logo.png" alt="" class="logo__img" aria-hidden="true">
+            <span class="logo__text">Ansari &amp; Associates<span>Mental Health · Alexandria, VA</span></span>
+          </a>
+          <div class="header-bar__right">
+            <a class="header-phone" href="tel:+17032248983">(703) 224-8983</a>
+            <div class="header-quick-links">
+              <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1v-9.5z"/></svg> Home</a>
+              <a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1z"/><path d="M4 7l8 6 8-6"/></svg> Contact</a>
+            </div>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+          </div>
+        </div>
         <nav class="main-nav" id="main-nav" aria-label="Main navigation">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="team.html" aria-current="page">Our Team</a></li>
+            <li class="nav-mobile-only"><a href="index.html">Home</a></li>
+            <li class="nav-dropdown nav-dropdown--team">
+              <a href="team.html" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true" aria-current="page">Our Team</a>
+              <ul class="nav-dropdown__menu">
+                <li><a href="about.html">Dr. Gazala Ansari</a></li>
+                <li><a href="team-emily.html">Mrs. Emily Apyan</a></li>
+                <li><a href="team-shelby.html">Mrs. Shelby Grant-Workman</a></li>
+                <li><a href="team-stancell.html">Dr. Waltrina Stancell</a></li>
+              </ul>
+            </li>
             <li class="nav-dropdown">
               <a href="services.html" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Services</a>
               <ul class="nav-dropdown__menu">
                 <li><a href="services.html#therapy">Therapy &amp; Clinical Services</a></li>
-                <li><a href="services.html#issues">Issues I Work With</a></li>
+                <li><a href="services.html#issues">Issues We Work With</a></li>
                 <li><a href="services.html#availability">Availability</a></li>
               </ul>
             </li>
+            <!-- FLAG: Fees page does not exist (removed earlier); skipped per instructions -->
             <li class="nav-dropdown nav-dropdown--resources">
-              <a href="know-your-provider.html" class="nav-dropdown__toggle" aria-haspopup="true">Resources</a>
+              <a href="resources.html" class="nav-dropdown__toggle" aria-haspopup="true">Resources</a>
               <ul class="nav-dropdown__menu">
-                <li><a href="know-your-provider.html">Know Your Provider</a></li>
-                <li><a href="why-local-matters.html">Why Local Matters</a></li>
+                <li><a href="resources.html#know-your-provider">Know Your Provider</a></li>
+                <li><a href="resources.html#why-local-matters">Why Local Matters</a></li>
+                <li><a href="resources.html#navigating-insurance">Navigating Insurance</a></li>
               </ul>
             </li>
             <li><a href="faq.html">FAQ</a></li>
-            
-            <li><a href="contact.html">Contact</a></li>
+            <li class="nav-mobile-only"><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -61,64 +73,68 @@
         <a href="team.html" class="team-back-link">&larr; Back to Our Team</a>
 
         <div class="team-profile">
-          <img class="team-profile__photo" src="images/shelby-grant-workman.png" alt="Shelby Grant-Workman, LCSW, LICSW">
+          <img class="team-profile__photo" src="images/shelby-grant-workman.png" alt="Mrs. Shelby Grant-Workman, LCSW">
           <div>
-            <span class="section-label">Senior Associate</span>
-            <h1>Shelby Grant-Workman, LCSW, LICSW</h1>
-            <p class="team-profile__title">Licensed Clinical Social Worker · Senior Associate, Ansari &amp; Associates LLC</p>
-            <article class="card credentials-intro-card" aria-label="Credentials overview">
-              <ul>
-                <li><strong>Degree:</strong> LCSW, LICSW</li>
-                <li><strong>Virginia License:</strong> #0904015111</li>
-                <li><strong>Verified:</strong> Psychology Today</li>
-                <li><strong>Phone:</strong> <a href="tel:+15715545176">(571) 554-5176</a></li>
-              </ul>
-            </article>
+            <h1>Mrs. Shelby Grant-Workman, LCSW</h1>
           </div>
         </div>
 
         <div class="content-block">
-          <h2>About Dr. Grant-Workman</h2>
-          <p>Life is a journey of ups and downs. For those facing uncertainty, feeling anxious or down, or navigating difficult transitions, they are not alone. Seeking support is a brave step toward finding change and fulfillment in life.</p>
-          <p>With a background as a preschool teacher and as a licensed clinical social worker, she brings a unique set of skills to create a safe space for children, teens, caregivers, and adults. In her practice, she utilizes an eclectic approach and believes in the power of a strong therapeutic alliance with clients.</p>
-          <p>She is licensed as a Clinical Social Worker in Virginia (March 2023), as a Licensed Independent Clinical Social Worker in Washington DC (April 2024), and as a Licensed Masters Social Worker in Maryland — reflecting her commitment to serving clients across the broader DMV area. She earned her Master of Social Work from the University of Michigan as a Clarice Ullman Freud Fellow and her Bachelor of Science in Social Work from the University of Tennessee, Summa Cum Laude.</p>
-          <p>At Ansari &amp; Associates since 2020, she works with a diverse caseload of clients ranging from children as young as age 4 to adults up to age 60, addressing anxiety, depression, ADHD, life transitions, stress, and family dynamics. She conducts comprehensive psychosocial assessments and draws on cognitive behavioral therapy, psychodynamic therapy, and play therapy techniques. Prior to clinical practice, she spent six years as a preschool teacher in Alexandria, Virginia — an experience that deeply informs her therapeutic work with young children and their caregivers today.</p>
+          <h2>Who I Am</h2>
+          <p>Mrs. Grant-Workman is a licensed clinical social worker who creates a safe space for children, teens, caregivers, and adults navigating uncertainty, anxiety, depression, and difficult transitions. She earned a Master of Social Work from the University of Michigan as a Clarice Ullman Freud Fellow and a Bachelor of Science in Social Work from the University of Tennessee, Summa Cum Laude. She is licensed as a Clinical Social Worker in Virginia (March 2023) and as a Licensed Master Social Worker in Maryland.</p>
+          <p>Mrs. Grant-Workman has been with Ansari &amp; Associates since 2020, working with a diverse caseload ranging from children as young as age 4 to adults up to age 60. She conducts comprehensive psychosocial assessments and draws on cognitive behavioral therapy, psychodynamic therapy, and play therapy techniques.</p>
+          <p>Before beginning her clinical career, she spent six years as a preschool teacher in Alexandria, Virginia — an experience that continues to inform her therapeutic work with young children and their caregivers today.</p>
+        </div>
+
+        <div class="content-block">
+          <h2>My Approach</h2>
+          <p>Mrs. Grant-Workman uses a client-centered approach, drawing on eclectic and cognitive behavioral techniques.</p>
         </div>
 
         <div class="content-block">
           <h2>Specialties</h2>
-          <p><strong>Primary focus areas:</strong></p>
-          <div class="focus-areas" role="list" aria-label="Primary focus areas">
-            <span class="focus-area" role="listitem">Stress</span>
-            <span class="focus-area" role="listitem">Coping Skills</span>
-            <span class="focus-area" role="listitem">Spirituality</span>
+          <div class="specialty-groups">
+            <div class="specialty-group">
+              <h3>Populations I Work With</h3>
+              <ul class="tag-list" aria-label="Populations">
+              <li>Adults</li>
+              <li>Child &amp; Adolescent Therapy</li>
+              <li>Caregivers &amp; Families</li>
+              </ul>
+            </div>
+            <div class="specialty-group">
+              <h3>Diagnoses &amp; Areas of Focus</h3>
+              <ul class="tag-list" aria-label="Diagnoses and areas of focus">
+              <li>Anxiety</li>
+              <li>Depression</li>
+              <li>Coping Skills</li>
+              <li>School Issues</li>
+              <li>Divorce</li>
+              <li>Domestic Abuse &amp; Violence</li>
+              <li>Family Conflict</li>
+              <li>Grief</li>
+              <li>Emotional Disturbance</li>
+              <li>Impulse Control</li>
+              <li>Personality Disorders</li>
+              <li>Self-Esteem</li>
+              <li>OCD</li>
+              <li>Trauma &amp; PTSD</li>
+              <li>Eating Disorders</li>
+              <li>Parenting</li>
+              <li>ADHD</li>
+              <li>Life Transitions</li>
+              <li>Stress</li>
+              <li>Relationship Issues</li>
+              <li>Women's Issues</li>
+              </ul>
+            </div>
           </div>
-          <p style="margin-top: var(--space-lg);"><strong>Also works with:</strong></p>
-          <ul class="tag-list" aria-label="Additional areas of focus">
-            <li>ADHD</li>
-            <li>Anxiety</li>
-            <li>Child Psychology</li>
-            <li>Education &amp; Learning Disabilities</li>
-            <li>Family Conflict</li>
-            <li>Life Transitions</li>
-            <li>Parenting</li>
-            <li>Relationship Issues</li>
-            <li>Self-Esteem</li>
-            <li>Women's Issues</li>
-          </ul>
-        </div>
-
-        <div class="content-block">
-          <h2>Insurance &amp; Payment</h2>
-          <p>We accept most BCBS plans, OWCP/DOL, Out-of-Network, and are Tricare-Approved Providers.</p>
         </div>
 
         <div class="content-block availability-block">
           <h2>Availability</h2>
           <ul>
-            <li>In-person sessions in Alexandria, VA 22314</li>
-            <li>Online / telehealth sessions available</li>
-            <li>Phone: <a href="tel:+15715545176">(571) 554-5176</a></li>
+            <li>In person and online available</li>
           </ul>
         </div>
 
@@ -129,30 +145,32 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+    <footer class="site-footer">
     <div class="container">
       <div class="crisis-box">
         <h3>Crisis Resources</h3>
         <p>This website is not for emergencies. If you or someone you know is in immediate danger, call <strong>911</strong>. For mental health crises, call or text <strong>988</strong> (Suicide &amp; Crisis Lifeline). You may also text <strong>HOME</strong> to <strong>741741</strong> to reach the Crisis Text Line.</p>
       </div>
-      <div class="footer-grid">
-        <div>
-          <h3>Ansari &amp; Associates, LLC</h3>
-          <p><a href="tel:+17032248983">(703) 224-8983</a></p>
-          <p><a href="mailto:drgansari@ansarillc.hush.com">drgansari@ansarillc.hush.com</a></p>
-          <p><a href="https://www.google.com/maps/search/?api=1&query=3311+Duke+St,+Alexandria,+VA+22314" target="_blank" rel="noopener noreferrer">3311 Duke St<br>Alexandria, VA 22314</a></p>
-        </div>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <h3>Navigation</h3>
+      <div class="footer-links">
+        <div class="footer-links__primary">
+          <nav class="footer-nav footer-nav--primary" aria-label="Primary footer navigation">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html">Make an Appointment</a></li>
+            </ul>
+          </nav>
+</div>
+        <div class="footer-links__divider" aria-hidden="true"></div>
+        <nav class="footer-nav footer-nav--secondary" aria-label="Secondary footer navigation">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
             <li><a href="team.html">Our Team</a></li>
-            <li><a href="services.html">Services</a></li>
             <li><a href="faq.html">FAQ</a></li>
-            <li><a href="know-your-provider.html">Know Your Provider</a></li>
-            <li><a href="why-local-matters.html">Why Local Matters</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="resources.html#know-your-provider">Know Your Provider</a></li>
+            <li><a href="resources.html#why-local-matters">Why Local Matters</a></li>
+            <li><a href="resources.html#navigating-insurance">Navigating Insurance</a></li>
             <li><a href="privacy.html">Privacy Policy</a></li>
           </ul>
         </nav>

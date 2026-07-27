@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dr. Waltrina Stancell, PsyD — Senior Associate at Ansari & Associates. Psychological, educational, and ADHD testing for children, with treatment for executive functioning and ADHD.">
+  <meta name="description" content="Dr. Waltrina Stancell, PsyD at Ansari & Associates. Psychological, educational, and ADHD testing for ages 6 and up, with treatment for executive functioning and ADHD.">
   <title>Dr. Waltrina Stancell, PsyD | Ansari &amp; Associates</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,42 +13,54 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="utility-bar">
-      <div class="container utility-bar__inner">
-        <p>Telehealth Available <span class="utility-bar__sep" aria-hidden="true">|</span> <a href="tel:+13019234402">(301) 923-4402</a> <span class="utility-bar__sep" aria-hidden="true">|</span> <a href="mailto:drgansari@ansarillc.hush.com">drgansari@ansarillc.hush.com</a></p>
-      </div>
-    </div>
-    <div class="nav-bar">
-      <div class="container nav-bar__inner">
-        <a href="index.html" class="logo" aria-label="Dr. Gazala A. Ansari — Home">
-          <img src="images/logo.png" alt="" class="logo__img" aria-hidden="true">
-          <span class="logo__text">Dr. Gazala A. Ansari, PhD<span>Clinical Psychologist · Alexandria, VA</span></span>
-        </a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <header class="site-header">
+    <div class="header-bar">
+      <div class="container">
+        <div class="header-bar__top">
+          <a href="index.html" class="logo" aria-label="Ansari &amp; Associates — Home">
+            <img src="images/logo.png" alt="" class="logo__img" aria-hidden="true">
+            <span class="logo__text">Ansari &amp; Associates<span>Mental Health · Alexandria, VA</span></span>
+          </a>
+          <div class="header-bar__right">
+            <a class="header-phone" href="tel:+17032248983">(703) 224-8983</a>
+            <div class="header-quick-links">
+              <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5V20a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1v-9.5z"/></svg> Home</a>
+              <a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1z"/><path d="M4 7l8 6 8-6"/></svg> Contact</a>
+            </div>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+          </div>
+        </div>
         <nav class="main-nav" id="main-nav" aria-label="Main navigation">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="team.html" aria-current="page">Our Team</a></li>
+            <li class="nav-mobile-only"><a href="index.html">Home</a></li>
+            <li class="nav-dropdown nav-dropdown--team">
+              <a href="team.html" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true" aria-current="page">Our Team</a>
+              <ul class="nav-dropdown__menu">
+                <li><a href="about.html">Dr. Gazala Ansari</a></li>
+                <li><a href="team-emily.html">Mrs. Emily Apyan</a></li>
+                <li><a href="team-shelby.html">Mrs. Shelby Grant-Workman</a></li>
+                <li><a href="team-stancell.html">Dr. Waltrina Stancell</a></li>
+              </ul>
+            </li>
             <li class="nav-dropdown">
               <a href="services.html" class="nav-dropdown__toggle" aria-expanded="false" aria-haspopup="true">Services</a>
               <ul class="nav-dropdown__menu">
                 <li><a href="services.html#therapy">Therapy &amp; Clinical Services</a></li>
-                <li><a href="services.html#issues">Issues I Work With</a></li>
+                <li><a href="services.html#issues">Issues We Work With</a></li>
                 <li><a href="services.html#availability">Availability</a></li>
               </ul>
             </li>
+            <!-- FLAG: Fees page does not exist (removed earlier); skipped per instructions -->
             <li class="nav-dropdown nav-dropdown--resources">
-              <a href="know-your-provider.html" class="nav-dropdown__toggle" aria-haspopup="true">Resources</a>
+              <a href="resources.html" class="nav-dropdown__toggle" aria-haspopup="true">Resources</a>
               <ul class="nav-dropdown__menu">
-                <li><a href="know-your-provider.html">Know Your Provider</a></li>
-                <li><a href="why-local-matters.html">Why Local Matters</a></li>
+                <li><a href="resources.html#know-your-provider">Know Your Provider</a></li>
+                <li><a href="resources.html#why-local-matters">Why Local Matters</a></li>
+                <li><a href="resources.html#navigating-insurance">Navigating Insurance</a></li>
               </ul>
             </li>
             <li><a href="faq.html">FAQ</a></li>
-            
-            <li><a href="contact.html">Contact</a></li>
+            <li class="nav-mobile-only"><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -63,62 +75,65 @@
         <div class="team-profile">
           <img class="team-profile__photo" src="images/waltrina-stancell.png" alt="Dr. Waltrina Stancell, PsyD">
           <div>
-            <span class="section-label">Senior Associate</span>
             <h1>Dr. Waltrina Stancell, PsyD</h1>
-            <p class="team-profile__title">Senior Associate, Ansari &amp; Associates LLC</p>
-            <article class="card credentials-intro-card" aria-label="Credentials overview">
-              <ul>
-                <li><strong>Degree:</strong> PsyD</li>
-                <li><strong>Education:</strong> M.A. Mental Health Counseling and Behavioral Medicine — Boston University School of Medicine, 2009; Howard University (undergraduate)</li>
-                <li><strong>Virginia License:</strong> #0701007049</li>
-                <li><strong>Licensed in:</strong> Virginia, Maryland, Washington, DC</li>
-                <li><strong>Verified:</strong> Psychology Today</li>
-                <li><strong>Phone:</strong> <a href="tel:+13019234402">(301) 923-4402</a></li>
-              </ul>
-            </article>
           </div>
         </div>
 
         <div class="content-block">
-          <h2>About Dr. Stancell</h2>
-          <p>Dr. Waltrina is an independently licensed clinician in Washington DC, Maryland, and Virginia with over ten years of experience in mental health and addictions counseling. She specializes in working with children, adolescents, adults, and families, using a person-centered and cognitive behavioral approach to explore thought patterns behind challenging emotions and behaviors.</p>
-          <p>She provides a warm, safe environment for clients to process their thoughts and feelings, working collaboratively to identify and mediate stressors, and is a strong advocate for self-care. She looks forward to learning about each client's experiences and personal goals.</p>
-          <p>She holds a Master of Arts in Clinical Psychology from The Chicago School of Professional Psychology in Washington DC (2019), a Master of Arts in Mental Health and Behavioral Medicine from Boston University School of Medicine (2009), and a Bachelor of Science in Psychology from Howard University (2007). She is a Board Approved Clinical Supervisor recognized by the State of Maryland DHMH Board of Professional Counselors and Therapists, authorized to supervise LGPCs.</p>
-          <p>Her clinical career spans over a decade of practice, supervision, and leadership across the DMV area, including work as a Contract Therapist at Inceptus Psychological &amp; Consulting Services in Alexandria, a Practicum and Internship Supervisor at The Chicago School of Professional Psychology, and a Program Manager overseeing adolescent outpatient and intensive outpatient substance abuse treatment at Federal City Recovery Services in Washington DC. She has been a valued member of the Ansari &amp; Associates team since 2021.</p>
+          <h2>Who I Am</h2>
+          <p>Dr. Stancell is an independently licensed clinician in Washington DC, Maryland, and Virginia with over ten years of experience in mental health counseling. She specializes in working with children, adolescents, adults, and families, and provides psychological testing for ages 6 and up.</p>
+          <p>She holds a Master of Arts in Clinical Psychology from The Chicago School of Professional Psychology in Washington DC (2019), a Master of Arts in Mental Health and Behavioral Medicine from Boston University School of Medicine (2009), and a Bachelor of Science in Psychology from Howard University (2007). Dr. Stancell is a Board Approved Clinical Supervisor recognized by the State of Maryland DHMH Board of Professional Counselors and Therapists, authorized to supervise LGPCs.</p>
+          <p>Dr. Stancell has been part of the Ansari &amp; Associates team since 2021. Before joining the practice, her clinical career included work as a Contract Therapist at Inceptus Psychological &amp; Consulting Services in Alexandria, a Practicum and Internship Supervisor at The Chicago School of Professional Psychology, and a Program Manager overseeing adolescent outpatient and intensive outpatient treatment at Federal City Recovery Services in Washington DC.</p>
         </div>
 
         <div class="content-block">
-          <h2>Therapeutic Approaches</h2>
-          <ul class="approach-list">
-            <li>Person-Centered Therapy</li>
-            <li>Cognitive Behavioral Therapy (CBT)</li>
-          </ul>
+          <h2>My Approach</h2>
+          <p>Dr. Stancell uses a person-centered and cognitive behavioral approach to explore thought patterns behind challenging emotions and behaviors. Dr. Stancell provides a warm, safe environment for clients to process their thoughts and feelings, working collaboratively to identify and mediate stressors, and is a strong advocate for self-care.</p>
         </div>
 
         <div class="content-block">
           <h2>Specialties</h2>
-          <ul class="tag-list" aria-label="Areas of focus">
-            <li>Depression</li>
-            <li>ADHD/ADD</li>
-            <li>Addiction</li>
-            <li>Anxiety</li>
-            <li>Child &amp; Adolescent</li>
-            <li>Trauma</li>
-            <li>Women's Issues</li>
-            <li>Life Transitions</li>
-            <li>Stress</li>
-            <li>Social Anxiety</li>
-            <li>School Issues</li>
-            <li>Family Conflict</li>
-          </ul>
+          <div class="specialty-groups">
+            <div class="specialty-group">
+              <h3>Populations I Work With</h3>
+              <ul class="tag-list" aria-label="Populations">
+              <li>Adults</li>
+              <li>Child &amp; Adolescent Therapy</li>
+              </ul>
+            </div>
+            <div class="specialty-group">
+              <h3>Diagnoses &amp; Areas of Focus</h3>
+              <ul class="tag-list" aria-label="Diagnoses and areas of focus">
+              <li>ADHD</li>
+              <li>Executive Functioning Coach</li>
+              <li>Anxiety</li>
+              <li>Depression</li>
+              <li>Coping Skills</li>
+              <li>School Issues</li>
+              <li>Divorce</li>
+              <li>Domestic Abuse &amp; Violence</li>
+              <li>Family Conflict</li>
+              <li>Grief</li>
+              <li>Emotional Disturbance</li>
+              <li>Impulse Control</li>
+              <li>Personality Disorders</li>
+              <li>Self-Esteem</li>
+              <li>Educational &amp; Learning Disabilities</li>
+              <li>Women's Issues</li>
+              <li>Life Transitions</li>
+              <li>Stress</li>
+              <li>Social Anxiety</li>
+              <li>Psychological Testing (ages 6+)</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div class="content-block availability-block">
           <h2>Availability</h2>
           <ul>
-            <li>Telehealth sessions — Monday afternoons and evenings</li>
-            <li>Serves clients in Alexandria, VA 22314 and across VA, MD, and DC</li>
-            <li>Phone: <a href="tel:+13019234402">(301) 923-4402</a></li>
+            <li>In person and online available</li>
+            <li>Monday afternoons and Saturdays</li>
           </ul>
         </div>
 
@@ -129,30 +144,32 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+    <footer class="site-footer">
     <div class="container">
       <div class="crisis-box">
         <h3>Crisis Resources</h3>
         <p>This website is not for emergencies. If you or someone you know is in immediate danger, call <strong>911</strong>. For mental health crises, call or text <strong>988</strong> (Suicide &amp; Crisis Lifeline). You may also text <strong>HOME</strong> to <strong>741741</strong> to reach the Crisis Text Line.</p>
       </div>
-      <div class="footer-grid">
-        <div>
-          <h3>Ansari &amp; Associates, LLC</h3>
-          <p><a href="tel:+17032248983">(703) 224-8983</a></p>
-          <p><a href="mailto:drgansari@ansarillc.hush.com">drgansari@ansarillc.hush.com</a></p>
-          <p><a href="https://www.google.com/maps/search/?api=1&query=3311+Duke+St,+Alexandria,+VA+22314" target="_blank" rel="noopener noreferrer">3311 Duke St<br>Alexandria, VA 22314</a></p>
-        </div>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <h3>Navigation</h3>
+      <div class="footer-links">
+        <div class="footer-links__primary">
+          <nav class="footer-nav footer-nav--primary" aria-label="Primary footer navigation">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html">Make an Appointment</a></li>
+            </ul>
+          </nav>
+</div>
+        <div class="footer-links__divider" aria-hidden="true"></div>
+        <nav class="footer-nav footer-nav--secondary" aria-label="Secondary footer navigation">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
             <li><a href="team.html">Our Team</a></li>
-            <li><a href="services.html">Services</a></li>
             <li><a href="faq.html">FAQ</a></li>
-            <li><a href="know-your-provider.html">Know Your Provider</a></li>
-            <li><a href="why-local-matters.html">Why Local Matters</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="resources.html#know-your-provider">Know Your Provider</a></li>
+            <li><a href="resources.html#why-local-matters">Why Local Matters</a></li>
+            <li><a href="resources.html#navigating-insurance">Navigating Insurance</a></li>
             <li><a href="privacy.html">Privacy Policy</a></li>
           </ul>
         </nav>
